@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class Ball : MonoBehaviour
 {
     public float speed;
@@ -48,11 +49,18 @@ public class Ball : MonoBehaviour
 
     private void StartBall()
     {
-        Vector2 force = new Vector2(1, 1) * speed;
+        float randomX = UnityEngine.Random.Range(-5f, 5f);
+        Vector2 direction = new Vector2(randomX, 1);
+        Vector2 force = direction.normalized * speed;
         rb.AddForce(force);
         isStarted = true;
     }
-    
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawRay(transform.position, rb.velocity);
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
