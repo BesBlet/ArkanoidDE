@@ -1,71 +1,67 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ball : MonoBehaviour
 {
-    public Rigidbody2D rb;
     public float speed;
+
+    public Rigidbody2D rb;
     public Pad pad;
+
     bool isStarted;
     float yPosition;
-
 
     void Start()
     {
         yPosition = transform.position.y;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Update()
     {
-        print("Collision!");
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        print("Collision Exit!");
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        print("Trigger!");
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        print("Trigger exit!");
-    }
-
-
-
-    void Update()
-    {
-        if(isStarted)
+        if (isStarted)
         {
-
+            //мяч запущен
+            //ничего не делаем
         }
-
         else
-
         {
-            Vector3 padPosition = pad.transform.position;
-            Vector3 BallNewPosition = new Vector3(padPosition.x, padPosition.y + yPosition, 0);
-            transform.position = BallNewPosition;
+            //мяч ещё не запущен
 
+            //двигаться вместе с платформой
+            Vector3 padPosition = pad.transform.position; //позиция платформы
 
-            if (Input.GetMouseButtonDown(0))
+            Vector3 ballNewPosition = new Vector3(padPosition.x, yPosition, 0); //новая позиция мяча
+            transform.position = ballNewPosition;
+
+            //проверить левую кнопку мыши
+            if (Input.GetMouseButtonDown(0)) //левая клавиша мыши
             {
-                print("Start!");
                 StartBall();
             }
         }
 
+        //print(rb.velocity);
     }
 
-   void StartBall()
+    private void StartBall()
     {
-        isStarted = true;
-        Vector2 force = new Vector2(10, 1) * speed;
+        Vector2 force = new Vector2(1, 1) * speed;
         rb.AddForce(force);
+        isStarted = true;
+    }
+    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        print("Load Scene");
+        SceneManager.LoadScene(0);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        //print("Trigger exit");
     }
 }
-

@@ -15,18 +15,15 @@ public class Pad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePixelPosition = Input.mousePosition;
-        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePixelPosition);
+        Vector3 mousePixelPosition = Input.mousePosition; //позиция мыши в координатах экрана
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePixelPosition); //позиция мыши в координатах игрового мира
+        //Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        Vector3 padNewPosition = mouseWorldPosition;
+        //Vector3 padNewPosition = mouseWorldPosition;
+        //padNewPosition.z = 0;
+        //padNewPosition.y = yPosition;
 
-
-        padNewPosition.z = 0;
-
-        padNewPosition.y = yPosition;
-
-
-
+        Vector3 padNewPosition = new Vector3(mouseWorldPosition.x, yPosition, 0);
         transform.position = padNewPosition;
     }
 }
