@@ -12,6 +12,8 @@ public class Ball : MonoBehaviour
     public Rigidbody2D rb;
     public Pad pad;
 
+
+    int live = 3;
     bool isStarted;
     float yPosition;
 
@@ -29,15 +31,8 @@ public class Ball : MonoBehaviour
         }
         else
         {
-            //мяч ещё не запущен
 
-            //двигаться вместе с платформой
-            Vector3 padPosition = pad.transform.position; //позиция платформы
-
-            Vector3 ballNewPosition = new Vector3(padPosition.x, yPosition, 0); //новая позиция мяча
-            transform.position = ballNewPosition;
-
-            //проверить левую кнопку мыши
+            BallRestart();
             if (Input.GetMouseButtonDown(0)) //левая клавиша мыши
             {
                 StartBall();
@@ -64,12 +59,33 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("Load Scene");
-        SceneManager.LoadScene(0);
+        live--;
+        if (live <= 0)
+        {
+            print("Load Scene");
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            BallRestart();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         //print("Trigger exit");
     }
+    void BallRestart()
+    {
+        Vector3 padPosition = pad.transform.position; //позиция платформы
+
+        Vector3 ballNewPosition = new Vector3(padPosition.x, yPosition, 0); //новая позиция мяча
+        transform.position = ballNewPosition;
+
+        //проверить левую кнопку мыши
+        isStarted = false;
+    }
+
 }
+
+    
