@@ -121,4 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f80fc54d50e6d34780693d2072b961f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  punch: 0
+  sprites:
+  - {fileID: 21300000, guid: 778af06b47b4cd84eabd720676e49153, type: 3}
+  punch: 2
