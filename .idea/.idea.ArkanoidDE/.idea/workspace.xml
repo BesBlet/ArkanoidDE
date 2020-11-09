@@ -12,15 +12,15 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../VictorinaDifinitiveEdition/Assets/Scripts/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Save.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Pad.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Ball.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Save.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ball.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pad.cs" />
       </list>
     </option>
   </component>
@@ -72,6 +72,10 @@
       <updated>1604238816583</updated>
       <workItem from="1604238838375" duration="6046000" />
       <workItem from="1604578827488" duration="3979000" />
+      <workItem from="1604657087549" duration="595000" />
+      <workItem from="1604787584022" duration="751000" />
+      <workItem from="1604913575728" duration="1162000" />
+      <workItem from="1604915707157" duration="2031000" />
     </task>
     <servers />
   </component>

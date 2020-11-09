@@ -1240,6 +1240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ea9e053a1c75448a0dee1303e08dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blocksCount: 0
 --- !u!4 &1412972176
 Transform:
   m_ObjectHideFlags: 0
@@ -2219,6 +2220,11 @@ PrefabInstance:
         type: 3}
       propertyPath: maxX
       value: 8.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078113508120281700, guid: f1445c83f69853b408becd14117885bd,
+        type: 3}
+      propertyPath: autoplay
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8078113508120281701, guid: f1445c83f69853b408becd14117885bd,
         type: 3}

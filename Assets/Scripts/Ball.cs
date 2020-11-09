@@ -19,7 +19,12 @@ public class Ball : MonoBehaviour
 
     void Start()
     {
+        pad = FindObjectOfType<Pad>();
         yPosition = transform.position.y;
+        if (pad.autoplay)
+        {
+            StartBall();
+        }
     }
 
     private void Update()

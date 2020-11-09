@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Text scoreText;
-    bool pauseActive;
+    public bool pauseActive;
 
     public int score;
 
