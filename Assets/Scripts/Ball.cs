@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+
 
 
 public class Ball : MonoBehaviour
@@ -12,16 +12,17 @@ public class Ball : MonoBehaviour
 
     public Rigidbody2D rb;
     public Pad pad;
-    public Text liveText;
+    public GameManager LgameManager;
+   
     
-    int live = 3;
+  
     
     bool isStarted;
     float yPosition;
 
     void Start()
     {
-        liveText.text = live.ToString();
+        LgameManager = FindObjectOfType<GameManager>();
         pad = FindObjectOfType<Pad>();
         yPosition = transform.position.y;
         if (pad.autoplay)
@@ -55,7 +56,7 @@ public class Ball : MonoBehaviour
         float randomX = UnityEngine.Random.Range(-5f, 5f);
         Vector2 direction = new Vector2(randomX, 1);
         Vector2 force = direction.normalized * speed;
-        rb.AddForce(force);
+        rb.velocity = force;
         isStarted = true;
     }
 
@@ -67,14 +68,18 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        live--;
-        liveText.text = live.ToString();
-        
-        if (live <= 0)
+        LgameManager.live--;
+       
+
+        if (LgameManager.live <= 0)
         {
+            LgameManager.gameOverText.gameObject.SetActive(true);
+            LgameManager.backgroundImage.gameObject.SetActive(true);
+            LgameManager.restartButton.gameObject.SetActive(true);
+            Cursor.visible = true;
             print("Load Scene");
-            //live = 3;
-            SceneManager.LoadScene(0);
+            LgameManager.live = 3;
+           //
         }
         else
         {
@@ -85,6 +90,7 @@ public class Ball : MonoBehaviour
     
     void BallRestart()
     {
+        LgameManager.LiveViewer();
         Vector3 padPosition = pad.transform.position; //позиция платформы
 
         Vector3 ballNewPosition = new Vector3(padPosition.x, yPosition, 0); //новая позиция мяча

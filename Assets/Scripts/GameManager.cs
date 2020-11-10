@@ -2,21 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public Text scoreText;
-    
+    public Text liveText;
     [Header("Pause/UI Element")]
     public Text pauseText;
     public Image backgroundImage;
     public Button continueButton;
     public Button exitButton;
-    
-    
+    public Ball ball;
+    [Header("GameOver/UI Element")]
+    public Text gameOverText;
+    public Button restartButton;
+
     public bool pauseActive;
     public int score;
-
+    public int live = 3;
     private void Awake()
     {
         GameManager[] gameManagers = FindObjectsOfType<GameManager>();
@@ -31,6 +35,10 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+      
+
+        ball = FindObjectOfType<Ball>();
+
         scoreText.text = "0000";
 
         DontDestroyOnLoad(gameObject);
@@ -39,7 +47,7 @@ public class GameManager : MonoBehaviour
    
     void Update()
     {
-        //scoreText.text = score.ToString();
+        scoreText.text = score.ToString();
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -73,12 +81,26 @@ public class GameManager : MonoBehaviour
         Cursor.visible = pauseActive;
     }
 
-
+    public void LiveViewer()
+    {
+       
+        liveText.text = live.ToString();
+    }
     public void PressContinueButton ()
     {
         Time.timeScale = 1f;
         pauseActive = false;
         SetPause(); 
+    }
+
+    public void PressRestartButton()
+    {
+        gameOverText.gameObject.SetActive(false);
+        backgroundImage.gameObject.SetActive(false);
+        restartButton.gameObject.SetActive(false);
+        Cursor.visible = false;
+        SceneManager.LoadScene(0);
+        Destroy(gameObject);
     }
 
     public void PressExitButton()
