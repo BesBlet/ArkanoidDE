@@ -17,10 +17,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Save.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Ball.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pad.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ball.cs" />
       </list>
     </option>
   </component>
@@ -76,6 +76,8 @@
       <workItem from="1604787584022" duration="751000" />
       <workItem from="1604913575728" duration="1162000" />
       <workItem from="1604915707157" duration="2031000" />
+      <workItem from="1604947246746" duration="3528000" />
+      <workItem from="1604995250157" duration="8143000" />
     </task>
     <servers />
   </component>

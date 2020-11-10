@@ -6,8 +6,15 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Text scoreText;
+    
+    [Header("Pause/UI Element")]
+    public Text pauseText;
+    public Image backgroundImage;
+    public Button continueButton;
+    public Button exitButton;
+    
+    
     public bool pauseActive;
-
     public int score;
 
     private void Awake()
@@ -38,13 +45,13 @@ public class GameManager : MonoBehaviour
         {
             if (pauseActive)
             {
-                Time.timeScale = 1f;
-                pauseActive = false;
+               PressContinueButton();
             }
             else
             {
                 Time.timeScale = 0f;
                 pauseActive = true;
+                SetPause();
             }
             
         }
@@ -54,5 +61,29 @@ public class GameManager : MonoBehaviour
     {
         score += addScore;
         scoreText.text = score.ToString();
+        
     }
+
+    void SetPause()
+    {
+        backgroundImage.gameObject.SetActive(pauseActive);
+        pauseText.gameObject.SetActive(pauseActive);
+        continueButton.gameObject.SetActive(pauseActive);
+        exitButton.gameObject.SetActive(pauseActive);
+        Cursor.visible = pauseActive;
+    }
+
+
+    public void PressContinueButton ()
+    {
+        Time.timeScale = 1f;
+        pauseActive = false;
+        SetPause(); 
+    }
+
+    public void PressExitButton()
+    {
+        Application.Quit();
+    }
+    
 }

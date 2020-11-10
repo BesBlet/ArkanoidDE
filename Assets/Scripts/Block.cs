@@ -8,11 +8,16 @@ public class Block : MonoBehaviour
 
 {
     public int points;
-    LevelManager levelManager;
-    GameManager gameManager;
     public Sprite[] sprites;
+    public bool invulnerable;
+
     private SpriteRenderer cursprite;
     public int punch;
+    private int cpunch;
+    
+    LevelManager levelManager;
+    GameManager gameManager;
+    
 
     private void Start()
     {
@@ -24,25 +29,33 @@ public class Block : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        gameManager.AddScore(points);
 
-        print("Punch");
+        if (invulnerable)
+        {
+            print("Invulnerable");
+        }
+        else
+        {
+            print("Punch");
 
-        punch--;
-
-        int i = 0;
-        if (punch <= 0)
+            punch--;
+        
+            cpunch++;
+        
+            if (cpunch <= sprites.Length)
+            {
+                cursprite.sprite = sprites[cpunch - 1];  
+            }
+        
+            if (punch <= 0)
+            
             {
                 levelManager.BlockDestroyed();
                 Destroy(gameObject);
+                gameManager.AddScore(points * cpunch);
             }
-        else
-        {
-            cursprite.sprite = sprites[i];
-            i++;                                              
+
         }
-        
-        
-       
+
     }
 }

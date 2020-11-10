@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
@@ -11,14 +12,16 @@ public class Ball : MonoBehaviour
 
     public Rigidbody2D rb;
     public Pad pad;
-
-
+    public Text liveText;
+    
     int live = 3;
+    
     bool isStarted;
     float yPosition;
 
     void Start()
     {
+        liveText.text = live.ToString();
         pad = FindObjectOfType<Pad>();
         yPosition = transform.position.y;
         if (pad.autoplay)
@@ -65,21 +68,21 @@ public class Ball : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         live--;
+        liveText.text = live.ToString();
+        
         if (live <= 0)
         {
             print("Load Scene");
+            //live = 3;
             SceneManager.LoadScene(0);
         }
         else
         {
+            isStarted = false;
             BallRestart();
         }
     }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        //print("Trigger exit");
-    }
+    
     void BallRestart()
     {
         Vector3 padPosition = pad.transform.position; //позиция платформы
@@ -88,7 +91,6 @@ public class Ball : MonoBehaviour
         transform.position = ballNewPosition;
 
         //проверить левую кнопку мыши
-        isStarted = false;
     }
 
 }
