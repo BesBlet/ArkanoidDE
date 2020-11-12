@@ -122,7 +122,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 50
-  gameManager: {fileID: 0}
   sprites:
   - {fileID: 21300000, guid: 778af06b47b4cd84eabd720676e49153, type: 3}
+  invulnerable: 0
+  pickupPrefab: {fileID: 3763578681218101927, guid: fa8dd6ccd9836cf4abeda8f9adb6bd99,
+    type: 3}
+  particleEffectPrefab: {fileID: 5403323916578807069, guid: 9c58a04842dfff344aabbab3715bc8ae,
+    type: 3}
   punch: 2

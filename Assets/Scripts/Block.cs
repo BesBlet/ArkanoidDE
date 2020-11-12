@@ -11,6 +11,10 @@ public class Block : MonoBehaviour
     public Sprite[] sprites;
     public bool invulnerable;
 
+
+    public GameObject pickupPrefab;
+    public GameObject particleEffectPrefab;
+
     private SpriteRenderer cursprite;
     public int punch;
     private int cpunch;
@@ -50,12 +54,21 @@ public class Block : MonoBehaviour
             if (punch <= 0)
             
             {
-                levelManager.BlockDestroyed();
-                Destroy(gameObject);
-                gameManager.AddScore(points * cpunch);
+                DestroyBlock();
             }
 
         }
+        
+    }
+    void DestroyBlock()
+    {
+        levelManager.BlockDestroyed();
+        gameManager.AddScore(points * cpunch);
+        Destroy(gameObject);
+
+
+        Instantiate(pickupPrefab, transform.position, Quaternion.identity);
+        Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
 
     }
 }
