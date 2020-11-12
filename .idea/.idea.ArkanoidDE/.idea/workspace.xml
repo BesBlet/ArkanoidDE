@@ -78,6 +78,8 @@
       <workItem from="1604915707157" duration="2031000" />
       <workItem from="1604947246746" duration="3528000" />
       <workItem from="1604995250157" duration="8143000" />
+      <workItem from="1605087365360" duration="1525000" />
+      <workItem from="1605174654855" duration="4692000" />
     </task>
     <servers />
   </component>
@@ -90,6 +92,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1605176376857">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1080@0.0.1920.1080" timestamp="1605176376857" />
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1604587674706">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

@@ -3,17 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
+using Cursor = UnityEngine.Cursor;
+using Image = UnityEngine.UI.Image;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Score/UI Element")]
     public Text scoreText;
     public Text liveText;
+    public Image lifeImage1;
+    public Image lifeImage2;
+    public Image lifeImage3;
+
     [Header("Pause/UI Element")]
     public Text pauseText;
     public Image backgroundImage;
     public Button continueButton;
     public Button exitButton;
-    public Ball ball;
+  
+    
+    
+    
     [Header("GameOver/UI Element")]
     public Text gameOverText;
     public Button restartButton;
@@ -29,16 +41,13 @@ public class GameManager : MonoBehaviour
             if (gameManagers[i].gameObject != gameObject)
             {
                 Destroy(gameObject);
+                gameObject.SetActive(false);
                 break;
             }
         }
     }
     void Start()
     {
-      
-
-        ball = FindObjectOfType<Ball>();
-
         scoreText.text = "0000";
 
         DontDestroyOnLoad(gameObject);
@@ -85,6 +94,7 @@ public class GameManager : MonoBehaviour
     {
        
         liveText.text = live.ToString();
+        
     }
     public void PressContinueButton ()
     {
@@ -98,6 +108,11 @@ public class GameManager : MonoBehaviour
         gameOverText.gameObject.SetActive(false);
         backgroundImage.gameObject.SetActive(false);
         restartButton.gameObject.SetActive(false);
+        
+        lifeImage3.gameObject.SetActive(true);
+        lifeImage2.gameObject.SetActive(true);
+        lifeImage1.gameObject.SetActive(true);
+        
         Cursor.visible = false;
         SceneManager.LoadScene(0);
         Destroy(gameObject);
@@ -106,6 +121,24 @@ public class GameManager : MonoBehaviour
     public void PressExitButton()
     {
         Application.Quit();
+    }
+
+    public void LifeImage()
+    {
+       
+        if (live == 2)
+        {
+            lifeImage3.gameObject.SetActive(false);
+        }
+        else if (live == 1)
+
+        {
+            lifeImage2.gameObject.SetActive(false);
+        }
+        else if (live == 0)
+        {
+            lifeImage1.gameObject.SetActive(false);
+        }
     }
     
 }

@@ -90,6 +90,7 @@ public class Ball : MonoBehaviour
     
     void BallRestart()
     {
+        LgameManager.LifeImage();
         LgameManager.LiveViewer();
         Vector3 padPosition = pad.transform.position; //позиция платформы
 
