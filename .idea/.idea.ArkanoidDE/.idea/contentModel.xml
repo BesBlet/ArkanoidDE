@@ -4,20 +4,10 @@
     <e p="C:\Users\Kema\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Kema\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_ArkanoidDE.-2046140684.00" t="ExcludeRecursive" />
     <e p="C:\Users\Kema\Unity\ArkanoidDE" t="IncludeRecursive">
+    <e p="$USER_HOME$/.var/app/com.unity.UnityHub/cache/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_ArkanoidDE.1712687.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="ArkanoidDE.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
-      <e p="Assets" t="Include">
-        <e p="Scripts" t="Include">
-          <e p="Ball.cs" t="Include" />
-          <e p="Block.cs" t="Include" />
-          <e p="GameManager.cs" t="Include" />
-          <e p="LevelManager.cs" t="Include" />
-          <e p="Pad.cs" t="Include" />
-        </e>
-      </e>
-      <e p="obj" t="ExcludeRecursive" />
-      <e p="Packages" t="ExcludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
   </component>
 </project>

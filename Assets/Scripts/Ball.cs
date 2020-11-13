@@ -68,24 +68,27 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        LgameManager.live--;
+
+        if (collision.gameObject.CompareTag("Wall B"))
+        {
+            LgameManager.live--;
        
 
-        if (LgameManager.live <= 0)
-        {
-            LgameManager.gameOverText.gameObject.SetActive(true);
-            LgameManager.backgroundImage.gameObject.SetActive(true);
-            LgameManager.restartButton.gameObject.SetActive(true);
-            Cursor.visible = true;
-            print("Load Scene");
-            LgameManager.live = 3;
-           //
+            if (LgameManager.live <= 0)
+            {
+                LgameManager.gameOverUI.SetActive(true);
+                Cursor.visible = true;
+                print("Load Scene");
+                LgameManager.live = 3;
+                //
+            }
+            else
+            {
+                isStarted = false;
+                BallRestart();
+            }
         }
-        else
-        {
-            isStarted = false;
-            BallRestart();
-        }
+        
     }
     
     void BallRestart()

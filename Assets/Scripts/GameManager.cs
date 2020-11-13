@@ -17,18 +17,11 @@ public class GameManager : MonoBehaviour
     public Image lifeImage2;
     public Image lifeImage3;
 
-    [Header("Pause/UI Element")]
-    public Text pauseText;
-    public Image backgroundImage;
-    public Button continueButton;
-    public Button exitButton;
-  
-    
-    
-    
-    [Header("GameOver/UI Element")]
-    public Text gameOverText;
-    public Button restartButton;
+    [Header("Pause/UI Element")] 
+    public GameObject pauseUI;
+
+    [Header("GameOver/UI Element")] 
+    public GameObject gameOverUI;
 
     public bool pauseActive;
     public int score;
@@ -83,10 +76,7 @@ public class GameManager : MonoBehaviour
 
     void SetPause()
     {
-        backgroundImage.gameObject.SetActive(pauseActive);
-        pauseText.gameObject.SetActive(pauseActive);
-        continueButton.gameObject.SetActive(pauseActive);
-        exitButton.gameObject.SetActive(pauseActive);
+        pauseUI.SetActive(pauseActive);
         Cursor.visible = pauseActive;
     }
 
@@ -105,10 +95,8 @@ public class GameManager : MonoBehaviour
 
     public void PressRestartButton()
     {
-        gameOverText.gameObject.SetActive(false);
-        backgroundImage.gameObject.SetActive(false);
-        restartButton.gameObject.SetActive(false);
-        
+        gameOverUI.SetActive(false);
+
         lifeImage3.gameObject.SetActive(true);
         lifeImage2.gameObject.SetActive(true);
         lifeImage1.gameObject.SetActive(true);
