@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4864583655045332353}
   - component: {fileID: 3377275280233189949}
   - component: {fileID: 1953313552630460228}
+  - component: {fileID: 5694292218840044470}
   m_Layer: 0
   m_Name: boost plus
   m_TagString: Untagged
@@ -120,3 +121,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5694292218840044470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909483399201112853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92207f0887351f84bbfe5f243e574b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 0}
+  ballSpeed: 100

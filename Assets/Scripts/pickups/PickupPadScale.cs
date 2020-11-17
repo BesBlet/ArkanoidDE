@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class PickupPadScale : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    Pad pad;
+    public Vector2 padScale;
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         
+        if (collision.gameObject.CompareTag("Pad"))
+        {
+            pad = FindObjectOfType<Pad>();
+            pad.transform.localScale = padScale;
+            Destroy(gameObject);
+        }
     }
 }

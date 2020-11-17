@@ -7,7 +7,9 @@ public class Ball : MonoBehaviour
     public float speed;
 
     public Rigidbody2D rb;
-    
+
+    public int ballSpeed;
+
     Pad pad;
 
     bool isStarted;
@@ -25,6 +27,10 @@ public class Ball : MonoBehaviour
         }
     }
 
+    public void BallSpeedUp()
+    {
+        rb.velocity = new Vector2(ballSpeed,ballSpeed);
+    }
     public void Restart()
     {
         isStarted = false;
