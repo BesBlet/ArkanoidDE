@@ -1,74 +1,57 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class Block : MonoBehaviour
-
 {
+    [Tooltip("Количество очков за уничтожение блока")] 
     public int points;
-    public Sprite[] sprites;
-    public bool invulnerable;
+    public bool invisible;
 
-
-    public GameObject pickupPrefab;
+    [Header("Prefabs")]
+    public GameObject[] pickupPrefab;
     public GameObject particleEffectPrefab;
 
-    private SpriteRenderer cursprite;
-    public int punch;
-    private int cpunch;
-    
-    LevelManager levelManager;
     GameManager gameManager;
-    
+    LevelManager levelManager;
+
+    SpriteRenderer spriteRenderer;
 
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         levelManager = FindObjectOfType<LevelManager>();
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         levelManager.BlockCreated();
-        cursprite = GetComponent<SpriteRenderer>();
+
+        if (invisible)
+        {
+            spriteRenderer.enabled = false;
+        }
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-
-        if (invulnerable)
+        if (invisible)
         {
-            print("Invulnerable");
+            spriteRenderer.enabled = true;
+            invisible = false;
+            return;
         }
-        else
-        {
-            print("Punch");
 
-            punch--;
-        
-            cpunch++;
-        
-            if (cpunch <= sprites.Length)
-            {
-                cursprite.sprite = sprites[cpunch - 1];  
-            }
-        
-            if (punch <= 0)
-            
-            {
-                DestroyBlock();
-            }
-
-        }
-        
+        DestroyBlock();
     }
-    void DestroyBlock()
+
+    private void DestroyBlock()
     {
+        gameManager.AddScore(points);
         levelManager.BlockDestroyed();
-        gameManager.AddScore(points * cpunch);
         Destroy(gameObject);
 
-
-        Instantiate(pickupPrefab, transform.position, Quaternion.identity);
-        Instantiate(particleEffectPrefab, transform.position, Quaternion.identity);
-
+        //создать объект на основе префаба
+        Instantiate(pickupPrefab[Random.Range(0,pickupPrefab.Length)], transform.position, Quaternion.identity); 
+        Instantiate(particleEffectPrefab, transform.position, Quaternion.identity); 
     }
 }

@@ -6,8 +6,6 @@ TagManager:
   tags:
   - Ball
   - Pad
-  - Wall B
-  - Particles
   layers:
   - Default
   - TransparentFX

@@ -2,34 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
-using Button = UnityEngine.UI.Button;
-using Cursor = UnityEngine.Cursor;
-using Image = UnityEngine.UI.Image;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Score/UI Element")]
     public Text scoreText;
-    public Text liveText;
-    public Image lifeImage1;
-    public Image lifeImage2;
-    public Image lifeImage3;
+    public GameObject panelPause;
 
-    [Header("Pause/UI Element")] 
-    public GameObject pauseUI;
-
-    [Header("GameOver/UI Element")] 
-    public GameObject gameOverUI;
-
+    [HideInInspector]
     public bool pauseActive;
-    public int score;
-    public int live = 3;
+
+    int score;
+    int lifes;
+
     private void Awake()
     {
         GameManager[] gameManagers = FindObjectsOfType<GameManager>();
-        for(int i= 0; i < gameManagers.Length; i++)
+        for (int i = 0; i < gameManagers.Length; i++)
         {
             if (gameManagers[i].gameObject != gameObject)
             {
@@ -37,96 +25,52 @@ public class GameManager : MonoBehaviour
                 gameObject.SetActive(false);
                 break;
             }
+
         }
     }
-    void Start()
+
+    private void Start()
     {
-        scoreText.text = "0000";
+        scoreText.text = "000";
 
         DontDestroyOnLoad(gameObject);
-    }
-
-   
-    void Update()
-    {
-        scoreText.text = score.ToString();
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (pauseActive)
-            {
-               PressContinueButton();
-            }
-            else
-            {
-                Time.timeScale = 0f;
-                pauseActive = true;
-                SetPause();
-            }
-            
-        }
     }
 
     public void AddScore(int addScore)
     {
         score += addScore;
         scoreText.text = score.ToString();
-        
     }
 
-    void SetPause()
+    public void LoseLife()
     {
-        pauseUI.SetActive(pauseActive);
-        Cursor.visible = pauseActive;
-    }
+        lifes--;
 
-    public void LiveViewer()
-    {
-       
-        liveText.text = live.ToString();
-        
-    }
-    public void PressContinueButton ()
-    {
-        Time.timeScale = 1f;
-        pauseActive = false;
-        SetPause(); 
-    }
-
-    public void PressRestartButton()
-    {
-        gameOverUI.SetActive(false);
-
-        lifeImage3.gameObject.SetActive(true);
-        lifeImage2.gameObject.SetActive(true);
-        lifeImage1.gameObject.SetActive(true);
-        
-        Cursor.visible = false;
-        SceneManager.LoadScene(0);
-        Destroy(gameObject);
-    }
-
-    public void PressExitButton()
-    {
-        Application.Quit();
-    }
-
-    public void LifeImage()
-    {
-       
-        if (live == 2)
+        if (lifes <= 0)
         {
-            lifeImage3.gameObject.SetActive(false);
+            //TODO restart
         }
-        else if (live == 1)
 
+
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            lifeImage2.gameObject.SetActive(false);
-        }
-        else if (live == 0)
-        {
-            lifeImage1.gameObject.SetActive(false);
+            if (pauseActive)
+            {
+                //пауза уже активна - вернуть время в 1
+                Time.timeScale = 1f;
+                pauseActive = false;
+            }
+            else
+            {
+                //включить паузу
+                Time.timeScale = 0f;
+                pauseActive = true;
+            }
+            panelPause.SetActive(pauseActive);
         }
     }
-    
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpScore : MonoBehaviour
+public class PickupScore : MonoBehaviour
 {
     public int points;
 
@@ -10,12 +10,13 @@ public class PickUpScore : MonoBehaviour
     {
         GameManager gameManager = FindObjectOfType<GameManager>();
         gameManager.AddScore(points);
-        print("Apply Effect");
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Pad"))
+        if (collision.gameObject.CompareTag("Pad"))
         {
+            //применить эффект
             ApplyEffect();
             Destroy(gameObject);
         }

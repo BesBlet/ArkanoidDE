@@ -4,10 +4,61 @@
     <e p="C:\Users\Kema\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Kema\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_ArkanoidDE.-2046140684.00" t="ExcludeRecursive" />
     <e p="C:\Users\Kema\Unity\ArkanoidDE" t="IncludeRecursive">
-    <e p="$USER_HOME$/.var/app/com.unity.UnityHub/cache/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_ArkanoidDE.1712687.00" t="ExcludeRecursive" />
-    <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="ArkanoidDE.sln" t="IncludeFlat" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="JMO Assets" t="Include">
+          <e p="Cartoon FX" t="Include">
+            <e p="CartoonFX Free.txt" t="Include" />
+            <e p="Demo" t="Include">
+              <e p="Assets" t="Include">
+                <e p="CFX_AutoStopLoopedEffect.cs" t="Include" />
+                <e p="CFX_Demo_New.cs" t="Include" />
+                <e p="CFX_Demo_RandomDir.cs" t="Include" />
+                <e p="CFX_Demo_RandomDirectionTranslate.cs" t="Include" />
+                <e p="CFX_Demo_RotateCamera.cs" t="Include" />
+                <e p="CFX_Demo_Translate.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="CFX_AutoDestructShuriken.cs" t="Include" />
+              <e p="CFX_AutoRotate.cs" t="Include" />
+              <e p="CFX_LightFlicker.cs" t="Include" />
+              <e p="CFX_LightIntensityFade.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="CFX3 Multiply Color.shader" t="Include" />
+              <e p="CFXM_MobileParticleAdd_Alpha8.shader" t="Include" />
+            </e>
+          </e>
+          <e p="Cartoon FX Easy Editor" t="Include">
+            <e p="CartoonFX Easy Editor Readme.txt" t="Include" />
+            <e p="Editor" t="Include">
+              <e p="CFXEasyEditor.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Ball.cs" t="Include" />
+          <e p="Block.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
+          <e p="LevelManager.cs" t="Include" />
+          <e p="LoseGame.cs" t="Include" />
+          <e p="Pad.cs" t="Include" />
+          <e p="pickups" t="Include">
+            <e p="PickupBallMagnet.cs" t="Include" />
+            <e p="PickupBallScale.cs" t="Include" />
+            <e p="PickupBallSpeed.cs" t="Include" />
+            <e p="PickupPadScale.cs" t="Include" />
+            <e p="PickupScore.cs" t="Include" />
+            <e p="PickupTwoBall.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
   </component>
 </project>
