@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 66339863001760603}
   - component: {fileID: 5252778780667117720}
   - component: {fileID: 6142875521141415571}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ball
   m_TagString: Ball
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   rb: {fileID: 66339863001760603}
-  ballSpeed: 0
+  ballMagnet: 0
 --- !u!50 &66339863001760603
 Rigidbody2D:
   serializedVersion: 4

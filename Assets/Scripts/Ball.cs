@@ -37,7 +37,8 @@ public class Ball : MonoBehaviour
     {
         loseGame = FindObjectOfType<LoseGame>();
         loseGame.twoBalls = true;
-        Instantiate(gameObject, transform.position, Quaternion.identity); 
+        Ball newBall = Instantiate(this);
+        newBall.StartBall();
     }
     public void BallSpeedUp()
     {
@@ -96,12 +97,11 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Pad"))
+        if (ballMagnet && collision.gameObject.CompareTag("Pad"))
         {
-            if (ballMagnet)
-            {
-                Restart();
-            }
+            
+            Restart();
+            
         }
     }
 
