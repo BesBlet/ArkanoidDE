@@ -50,8 +50,8 @@ public class Block : MonoBehaviour
         levelManager.BlockDestroyed();
         Destroy(gameObject);
 
-        //создать объект на основе префаба
-        Instantiate(pickupPrefab[Random.Range(0,pickupPrefab.Length)], transform.position, Quaternion.identity); 
-        Instantiate(particleEffectPrefab, transform.position, Quaternion.identity); 
+        Instantiate(pickupPrefab[Random.Range(0,pickupPrefab.Length)], transform.position, Quaternion.identity); //создать объект на основе префаба
+        
     }
+    
 }

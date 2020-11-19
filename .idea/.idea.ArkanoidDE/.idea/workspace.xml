@@ -42,10 +42,15 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Save.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pad.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Ball.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Wall.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/pickups/PickupBallScale.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/pickups/PickupBallMagnet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/pickups/PickupLife.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/pickups/PickupBallSpeed.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ball.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/pickups/PickupTwoBall.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LoseGame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
       </list>
     </option>
@@ -109,6 +114,7 @@
       <workItem from="1605262339050" duration="980000" />
       <workItem from="1605602619330" duration="1866000" />
       <workItem from="1605618268391" duration="4293000" />
+      <workItem from="1605695438906" duration="7404000" />
     </task>
     <servers />
   </component>
@@ -127,6 +133,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

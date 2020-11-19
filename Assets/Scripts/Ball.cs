@@ -8,9 +8,14 @@ public class Ball : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    public int ballSpeed;
+    //public float ballSpeed;
+    
+    public bool ballMagnet;
 
     Pad pad;
+
+    LoseGame loseGame;
+
 
     bool isStarted;
     float yPosition;
@@ -27,9 +32,16 @@ public class Ball : MonoBehaviour
         }
     }
 
+
+    public void TwoBalls()
+    {
+        loseGame = FindObjectOfType<LoseGame>();
+        loseGame.twoBalls = true;
+        Instantiate(gameObject, transform.position, Quaternion.identity); 
+    }
     public void BallSpeedUp()
     {
-        rb.velocity = new Vector2(ballSpeed,ballSpeed);
+
     }
     public void Restart()
     {
@@ -84,21 +96,14 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //print("Collision!");
+        if (collision.gameObject.CompareTag("Pad"))
+        {
+            if (ballMagnet)
+            {
+                Restart();
+            }
+        }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        //print("Collision exit");
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //print("Trigger!");
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        //print("Trigger exit");
-    }
+   
 }

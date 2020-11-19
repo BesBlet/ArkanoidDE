@@ -6,6 +6,7 @@ public class LoseGame : MonoBehaviour
 {
     GameManager gameManager;
     Ball ball;
+    public bool twoBalls;
 
     private void Start()
     {
@@ -18,9 +19,17 @@ public class LoseGame : MonoBehaviour
         //if (collision.gameObject.tag == "Ball")
         if (collision.gameObject.CompareTag("Ball"))
         {
-            //если мяч - отнять жизнь
-            gameManager.LoseLife();
-            ball.Restart();
+            if (twoBalls)
+            {
+                twoBalls = false;
+            }
+            else
+            {
+                //если мяч - отнять жизнь
+                gameManager.LoseLife();
+                ball.Restart();
+            }
+           
         }
         else
         { 
