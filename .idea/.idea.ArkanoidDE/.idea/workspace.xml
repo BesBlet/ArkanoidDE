@@ -34,7 +34,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Block.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../VictorinaDifinitiveEdition/Assets/Scripts/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/pickups/PickupTwoBall.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/pickups/PickupBallMagnet.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -44,14 +43,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Pad.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Wall.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/pickups/PickupBallScale.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/pickups/PickupBallMagnet.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/pickups/PickupLife.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/pickups/PickupBallSpeed.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Ball.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/pickups/PickupTwoBall.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LoseGame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/pickups/PickupBallMagnet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/pickups/PickupBallSpeed.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/pickups/PickupTwoBall.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LoseGame.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ball.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/pickups/PickupLife.cs" />
       </list>
     </option>
   </component>
@@ -115,6 +114,7 @@
       <workItem from="1605602619330" duration="1866000" />
       <workItem from="1605618268391" duration="4293000" />
       <workItem from="1605695438906" duration="7404000" />
+      <workItem from="1606299832324" duration="1848000" />
     </task>
     <servers />
   </component>

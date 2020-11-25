@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class PickupLife : MonoBehaviour
 {
-    public int addLifes;
+    public int addLife;
+    private void ApplyEffect()
+    {
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        gameManager.AddLifes(addLife);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Pad"))
         {
-            GameManager gameManager = FindObjectOfType<GameManager>();
-            gameManager.lifes += addLifes;
+            //применить эффект
+            ApplyEffect();
             Destroy(gameObject);
         }
     }

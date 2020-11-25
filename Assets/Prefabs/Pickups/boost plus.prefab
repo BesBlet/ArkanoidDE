@@ -133,5 +133,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92207f0887351f84bbfe5f243e574b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 0}
-  ballSpeed: 100
+  speedKoef: 1.5

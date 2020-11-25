@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickupBallMagnet : MonoBehaviour
+public class PickupMultipleBalls : MonoBehaviour
 {
     private void ApplyEffect()
     {
-        Ball[] balls = FindObjectsOfType<Ball>();
-        foreach(Ball ball in balls)
-        {
-            ball.ActivateMagnet();
-        }
+        Ball ball = FindObjectOfType<Ball>();
+        ball.Duplicate();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

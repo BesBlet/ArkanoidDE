@@ -51,9 +51,9 @@
             <e p="PickupBallScale.cs" t="Include" />
             <e p="PickupBallSpeed.cs" t="Include" />
             <e p="PickupLife.cs" t="Include" />
+            <e p="PickupMultipleBalls.cs" t="Include" />
             <e p="PickupPadScale.cs" t="Include" />
             <e p="PickupScore.cs" t="Include" />
-            <e p="PickupTwoBall.cs" t="Include" />
           </e>
         </e>
       </e>

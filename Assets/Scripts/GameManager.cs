@@ -48,6 +48,12 @@ public class GameManager : MonoBehaviour
         scoreText.text = score.ToString();
     }
 
+    public void AddLifes(int addLifes)
+    {
+        lifes += addLifes;
+        lifeText.text = lifes.ToString();
+        
+    }
     public void LoseLife()
     {
         lifes--;

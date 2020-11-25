@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class PickupBallSpeed : MonoBehaviour
 {
+    public float speedKoef;
 
-    
+    private void ApplyEffect()
+    {
+        Ball[] balls = FindObjectsOfType<Ball>();
+        foreach (Ball ball in balls)
+        {
+            ball.MultiplySpeed(speedKoef);
+        }
+    }
 
-    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         if (collision.gameObject.CompareTag("Pad"))
         {
-            Ball ball = FindObjectOfType<Ball>();    
-            
+            //применить эффект
+            ApplyEffect();
+            Destroy(gameObject);
         }
     }
 }
