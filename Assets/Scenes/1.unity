@@ -1696,6 +1696,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1773803875}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2108488803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9001108825967236097, guid: 8c13450cb09c013468f279053482afd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 9001108827457366337}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2108488804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108488803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2136c497dcaabf4fa007c268e67af04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2264616104413974474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1777,6 +1795,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2634762102492318800, guid: ae76d7a3d3e270a4ba498068a835d9ae,
+        type: 3}
+      propertyPath: keyboard
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2634762102492318800, guid: ae76d7a3d3e270a4ba498068a835d9ae,
+        type: 3}
+      propertyPath: padSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2634762102492318801, guid: ae76d7a3d3e270a4ba498068a835d9ae,
         type: 3}
       propertyPath: m_LocalPosition.x

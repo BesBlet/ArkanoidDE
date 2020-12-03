@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Pad : MonoBehaviour
 {
+    public float padSpeed = 1f;
+    public bool keyboard;
     public bool autoplay;
     public float maxX;
 
@@ -37,6 +39,18 @@ public class Pad : MonoBehaviour
         {
             Vector3 ballPos = ball.transform.position;
             padNewPosition = new Vector3(ballPos.x, yPosition, 0);
+        }
+        if(keyboard)
+        {
+            padNewPosition = transform.position;
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                padNewPosition.x += padSpeed * Time.deltaTime;
+            }
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                padNewPosition.x -= padSpeed * Time.deltaTime;
+            }
         }
         else
         {
