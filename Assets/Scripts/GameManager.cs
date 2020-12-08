@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public bool pauseActive;
     public int lifes;
-    
+    public List<GameObject> lifeItems;
     
     int score;
  
@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
         lifes = 3;
         lifeText.text = lifes.ToString();
         scoreText.text = "000";
+        UpdateLifes();
 
         DontDestroyOnLoad(gameObject);
     }
@@ -48,16 +49,32 @@ public class GameManager : MonoBehaviour
         scoreText.text = score.ToString();
     }
 
+    void UpdateLifes()
+    {
+        for (int i = 0; i < lifeItems.Count; i++)
+        {
+            if (i < lifes)
+            {
+                lifeItems[i].SetActive(true);
+            }
+            else
+            {
+                lifeItems[i].SetActive(false); 
+            }
+        }
+    }
     public void AddLifes(int addLifes)
     {
         lifes += addLifes;
         lifeText.text = lifes.ToString();
+        UpdateLifes();
         
     }
     public void LoseLife()
     {
         lifes--;
         lifeText.text = lifes.ToString();
+        UpdateLifes();
 
         if (lifes <= 0)
         {
